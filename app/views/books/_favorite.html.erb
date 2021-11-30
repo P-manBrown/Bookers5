@@ -1,0 +1,11 @@
+<% if book_id.favorited_by?(current_user) %>
+    <p>
+        <%= link_to book_favorites_path(book_id), method: :delete do %>
+         ❤️︎︎️ <%= book_id.favorites.count %>
+        <% end %>
+    <% else %>
+        <%= link_to book_favorites_path(book_id), method: :post do %>
+         💙︎ <%= book_id.favorites.count %>
+        <% end %>
+    </p>
+<% end %>
